@@ -5,10 +5,11 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D rb2D;
     public float moveSpeed;
 
-    [Range(1, 10)]
-    public float jumpForce;
+    [Range(1, 10)] public float jumpForce;
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
+
+    [SerializeField] private AudioSource walkingSoundEffect;
 
     private void Update()
     {
@@ -35,6 +36,13 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             transform.localScale = new Vector3(Input.GetAxisRaw("Horizontal"), 1, 1);
+            if (PlayerController.grounded == true)
+                walkingSoundEffect.enabled = true;
+            else
+                walkingSoundEffect.enabled = false;
         }
+        else
+            walkingSoundEffect.enabled = false;
+
     }
 }
