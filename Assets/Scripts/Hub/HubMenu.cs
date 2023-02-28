@@ -23,6 +23,7 @@ public class HubMenu : MonoBehaviour
         }
         else
             CloseCredits();
+        Time.timeScale = 1;
     }
 
     public void OpenExitConfirm()
@@ -35,15 +36,18 @@ public class HubMenu : MonoBehaviour
         }
         else
             CloseExitConfirm();
+        Time.timeScale = 0;
     }
 
     public void CloseCredits()
     {
+        Time.timeScale = 1;
         credits.SetActive(false);
     }
 
     public void CloseExitConfirm()
     {
+        Time.timeScale = 1;
         exitConfirmation.SetActive(false);
     }
 
