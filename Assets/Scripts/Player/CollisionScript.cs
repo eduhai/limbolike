@@ -11,11 +11,13 @@ public class CollisionScript : MonoBehaviour
     {
         if (collision.collider.tag == "Portal")
             SceneManager.LoadScene("1-1");
-        else if (collision.collider.tag == "Crystal")
+
+        if (collision.collider.tag == "Crystal")
         {
             Debug.Log("kristalli");
             playerPoints.value++;
             collision.gameObject.SetActive(false);
         }
     }
+
 }
