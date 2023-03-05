@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody2D rb2D;
+    public Animator animator;
     public float moveSpeed;
 
     [Range(1, 10)] public float jumpForce;
@@ -17,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && PlayerController.grounded == true)
         {
             rb2D.velocity = Vector2.up * jumpForce;
+            animator.SetTrigger("Jump");
         }
 
         // Betterjumping based on https://www.youtube.com/watch?v=7KiK0Aqtmzc
@@ -36,12 +38,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetAxisRaw("Horizontal") != 0)
         {
             transform.localScale = new Vector3(Input.GetAxisRaw("Horizontal"), 1, 1);
+            animator.SetBool("Walk", true);
+
             if (PlayerController.grounded == true)
                 walkingSoundEffect.enabled = true;
             else
                 walkingSoundEffect.enabled = false;
         }
         else
+            animator.SetBool("Walk", false);
             walkingSoundEffect.enabled = false;
 
     }
