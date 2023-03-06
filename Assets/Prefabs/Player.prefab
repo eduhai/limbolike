@@ -165,12 +165,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36b68cf3984f814a85b3a84547a3bc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPoints: {fileID: 0}
+  playerPoints: {fileID: 11400000, guid: 07df07ccffa6e304dae8896ba0527b56, type: 2}
   playerControllerScript: {fileID: 2972251504593515979}
   playerMovementScript: {fileID: 2972251504593515978}
   playerPos: {fileID: 2972251504593515828}
   respawnPos: {fileID: 0}
   walkingSound: {fileID: 2972251504593515977}
+  currentScene: 0
 --- !u!82 &2972251504593515977
 AudioSource:
   m_ObjectHideFlags: 0

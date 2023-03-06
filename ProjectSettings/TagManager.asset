@@ -8,6 +8,8 @@ TagManager:
   - Portal
   - Crystal
   - Trap
+  - PreviousLevel
+  - NextLevel
   layers:
   - Default
   - TransparentFX
